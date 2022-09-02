@@ -21,6 +21,7 @@ Live Demo: [http://angulartodoapp.demoistasyonu.com](http://angulartodoapp.demoi
 * Sorting todos with drag and drop methods
 * Toast notification system for process results and errors
 * Alert system for upcoming todos
+* HTML markups and media insertion
 * User authentication and authorization
 * Multi-user system
 
