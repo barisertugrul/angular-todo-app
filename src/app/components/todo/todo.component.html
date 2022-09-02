@@ -1,3 +1,4 @@
+<div class="col col-lg-8 col-md-8 col-sm-12">
 <div class="row mt-1">
   <button #addFormToggleBtn (click)="setAddFormToggleBtnText($event)" id="addFormShowControl" class="btn btn-primary float-end" type="button" data-bs-toggle="collapse" data-bs-target="#todoAddForm" aria-expanded="false" aria-controls="todoAddFormShow">
      {{addFormToggleBtnText}}
@@ -110,3 +111,4 @@
     </div>
 </div>
 <app-todo-edit-form [modalTodo]="selectedTodo" (save)="saveTodoWatcher($event)"></app-todo-edit-form>
+</div>

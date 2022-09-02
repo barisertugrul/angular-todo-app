@@ -12,6 +12,7 @@ import { CategoryEditFormComponent } from './components/category-edit-form/categ
 import { TodoEditFormComponent } from './components/todo-edit-form/todo-edit-form.component';
 import { TodoContainerComponent } from './containers/todo/todo-container/todo-container.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     FormsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

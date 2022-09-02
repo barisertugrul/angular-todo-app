@@ -1,6 +1,4 @@
-import { Todo } from './models/todo';
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
