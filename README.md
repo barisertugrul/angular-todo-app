@@ -2,7 +2,7 @@
 
 ## Angular Todo Project that works with your browser's memory using local storage, and its information is not lost when the page is refreshed.
 
-[Live Demo: http://angulartodoapp.demoistasyonu.com](http://angulartodoapp.demoistasyonu.com)
+Live Demo: [http://angulartodoapp.demoistasyonu.com](http://angulartodoapp.demoistasyonu.com)
 
 ![Todo App Screenshot](https://github.com/barisertugrul/angular-todo-app/blob/master/assets/screenshots/Todo-App-Device-Screenshot-1.png)
 
