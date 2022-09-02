@@ -1,0 +1,112 @@
+<div class="row mt-1">
+  <button #addFormToggleBtn (click)="setAddFormToggleBtnText($event)" id="addFormShowControl" class="btn btn-primary float-end" type="button" data-bs-toggle="collapse" data-bs-target="#todoAddForm" aria-expanded="false" aria-controls="todoAddFormShow">
+     {{addFormToggleBtnText}}
+  </button>
+</div>
+<div class="collapse" id="todoAddForm">
+  <div class="card card-body">
+    <div class="list-group">
+      <div class="list-group-item">
+
+
+
+
+        <form #f="ngForm" (ngSubmit)="f.form.valid && addItem()">
+
+            <div class="alert alert-danger" *ngIf="errorMessage">
+              <strong>Error!</strong> {{errorMessage}};
+            </div>
+
+            <div class="form-group mb-2">
+              <label for = "category" class="mb-1">Todo Category</label>
+              <select
+                [(ngModel)]="todo.categoryId"
+                class="form-control form-select"
+                id="category"
+                name="category"
+                #todoCategory = "ngModel"
+                aria-label="Category Select"
+
+              >
+                <option selected value="">Chose category</option>
+                <option *ngFor="let category of categoryList" [class]="'list-group-item list-group-item-' + category.color" [value]="category.id">{{category.name}}</option>
+              </select>
+              <!--<div class="alert-danger" *ngIf="f.submitted && !todoCategory.valid">
+                Category is required. (if added request property)
+              </div>-->
+            </div>
+
+            <div class="form-group mb-2">
+              <label for = "name" class="mb-1">Todo</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                [(ngModel)] = "todo.name"
+                #todoName = "ngModel"
+                #itemName
+                required
+              />
+              <div class="alert-danger" *ngIf="f.submitted && !todoName.valid">
+                Todo name is required.
+              </div>
+            </div>
+
+            <div class="form-group mb-2">
+              <label for = "expDate" class="mb-1">Todo Deadline</label>
+              <input
+                [(ngModel)]="todo.expDate"
+                class="form-control"
+                type="date"
+                id="expDate"
+                name="expDate"
+                #todoExpDate = "ngModel"
+                aria-label="Date Select"
+                (onchange)="onChangeDateValue($event)"
+              />
+              <span id="selectedDate">{{selectedDate}}</span>
+              <div class="alert-danger" *ngIf="f.submitted && !todoExpDate.valid">
+                Invalid date.
+              </div>
+            </div>
+
+            <div class="form-group mb-2">
+              <label for = "description" class="mb-1">Todo Description</label>
+              <textarea
+                [(ngModel)]="todo.description"
+                class="form-control"
+                id="description"
+                name="description"
+                #todoDescription = "ngModel"
+                aria-label="Todo Description"
+                rows="3"
+              ></textarea>
+              <div class="alert-danger" *ngIf="f.submitted && !todoDescription.valid">
+                Invalid description.
+              </div>
+            </div>
+
+          <div class="modal-footer mt-2">
+            <button class="btn btn-secondary me-1" (click)="setAddFormToggleBtnText($event)" id="addFormShowControl" type="button" data-bs-toggle="collapse" data-bs-target="#todoAddForm" aria-expanded="false" aria-controls="todoAddFormClose">Close</button>
+            <button class="btn btn-primary" type="submit">Add Todo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 class="mt-3">TODO List</h2>
+<div class="list-group">
+    <div *ngFor="let todoItem of todoList">
+      <app-todo-item
+        [todoItem] = "todoItem"
+        (editRequest) = "editTodoWatcher($event)"
+        (deleteRequest) = "deleteTodoWatcher($event)"
+      >
+      </app-todo-item>
+    </div>
+</div>
+<app-todo-edit-form [modalTodo]="selectedTodo" (save)="saveTodoWatcher($event)"></app-todo-edit-form>

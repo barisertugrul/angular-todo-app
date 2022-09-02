@@ -1,0 +1,29 @@
+<div class="todo-item list-group mb-1">
+  <label [class]="todoItem.completed == true ? 'list-group-item list-group-item-success text-decoration-line-through fst-italic' : 'list-group-item list-group-item-light text-decoration-none'">
+    <div class="d-flex flex-row bd-highlight flex-column">
+      <div class="d-flex align-self-start flex-grow-1">
+        <input #checkComplete class="form-check-input me-1" type="checkbox"  (click)="todoComplete(todoItem)" [checked]="todoItem.completed">
+        {{todoItem.name}}
+
+      </div>
+      <div class="d-flex align-items-end">
+        <p class="d-flex align-self-end flex-grow-1 align-items-end"><fa-icon class="text-danger" [icon]="faDate"></fa-icon><span class="text-danger ms-1 me-1">Deadline:</span>{{todoItem.expDate | date:'d.M.y'}}</p>
+        <div class="button-group p-2 flex-shrink-1 bd-highlight align-self-end">
+          <button  type="button" data-bs-toggle="collapse" [attr.data-bs-target]="bsElement" aria-expanded="false" aria-controls="todoDescription" class="btn btn-primary btn-sm float-end ms-1"><fa-icon [icon]="faInfo"></fa-icon></button>
+        <button (click) ="edit(todoItem)" class="btn btn-success btn-sm float-end ms-1"><fa-icon [icon]="faEdit"></fa-icon></button>
+        <button (click) ="delete(todoItem)" class="btn btn-danger btn-sm float-end"><fa-icon [icon]="faDelete"></fa-icon></button>
+        <!--<span class="badge bg-warning text-dark float-end mt-1 me-2">{{(getTodoCategoryByCategoryId(item.categoryId) !== undefined) ? getTodoCategoryByCategoryId(item.categoryId).name : 'Uncategorized'}}</span>-->
+        </div>
+      </div>
+    </div>
+  </label>
+  <div class="todo-detail collapse mb-2" [id]="bsElementId">
+    <div class="card card-body">
+      <p><fa-icon class="text-warning" [icon]="faCat"></fa-icon><span class="text-warning ms-1 me-1">Category:</span>{{(todoCategory) ? todoCategory.name : 'Uncategorized'}}</p>
+      <p><fa-icon class="text-danger" [icon]="faDate"></fa-icon><span class="text-danger ms-1 me-1">Deadline:</span>{{todoItem.expDate | date:'d.M.y'}}</p>
+      <p><fa-icon class="text-primary" [icon]="faDesc"></fa-icon><span class="text-primary ms-1 me-1">Description:</span>{{todoItem.description}}</p>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,13 @@
+.todo-detail.collapse.show .card.card-body{
+  border-top: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.todo-detail.collapse.show{
+  margin-top: -5px;
+}
+
+.todo-item .list-group-item:first-child {
+  border-radius: inherit;
+}

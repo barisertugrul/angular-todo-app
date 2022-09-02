@@ -1,6 +1,6 @@
 {
   "name": "angular-todo-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,7 +18,16 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
-    "rxjs": "~6.6.0",
+    "@fortawesome/angular-fontawesome": "^0.9.0",
+    "@fortawesome/fontawesome-common-types": "^6.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "bootstrap": "^5.2.0",
+    "jquery": "^3.6.1",
+    "rxjs": "^6.6.7",
+    "save": "^2.5.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

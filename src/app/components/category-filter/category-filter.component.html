@@ -1,0 +1,21 @@
+<div class="category-filter list-group">
+    <label class="list-group-item"><h2>Categories</h2></label>
+    <label routerLink="category/all" class="list-group-item" routerLinkActive="active">
+      All
+      <ng-container *ngIf="getTodoCount()">
+        <span [class]="'badge category-color-badge rounded-pill bg-default float-end mt-1 me-2'">{{getTodoCount()}}</span>
+      </ng-container>
+    </label>
+    <label routerLink="category/uncategorized" class="list-group-item" routerLinkActive="active">
+      Uncategorized
+      <ng-container *ngIf="getTodoCount('uncategorized')">
+        <span [class]="'badge category-color-badge rounded-pill bg-default float-end mt-1 me-2'">{{getTodoCount('uncategorized')}}</span>
+      </ng-container>
+    </label>
+    <label *ngFor="let item of categoryList" [routerLink]="'category/' + item.id" class="list-group-item" routerLinkActive="active">
+      {{item.name}}
+      <ng-container *ngIf="getTodoCount(item.id, item.name)">
+        <span [class]="'badge category-color-badge rounded-pill bg-' + item.color + ' float-end mt-1 me-2'">{{getTodoCount(item.id)}}</span>
+      </ng-container>
+    </label>
+</div>

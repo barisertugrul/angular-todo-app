@@ -1,0 +1,92 @@
+<div class="modal fade" id="todoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form #f="ngForm" (ngSubmit)="f.form.valid && saveTodo()">
+        <div class="modal-header">
+          <h5 class="modal-title">Todo Details</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" *ngIf="errorMessage">
+            <strong>Error!</strong> {{errorMessage}};
+          </div>
+
+          <div class="form-group">
+            <label for = "name">Todo</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              [(ngModel)] = "modalTodo.name"
+              #todoName = "ngModel"
+              required
+            />
+            <div class="alert-danger" *ngIf="f.submitted && !todoName.valid">
+              Todo name is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for = "category">Todo Category</label>
+            <select
+              [(ngModel)]="modalTodo.categoryId"
+              class="form-control form-select"
+              id="category"
+              name="category"
+              #todoCategory = "ngModel"
+              aria-label="Category Select"
+
+            >
+              <option selected value="">Chose category</option>
+              <option *ngFor="let todoItemCategory of todoItemCategoryList" [class]="'list-group-item list-group-item-' + todoItemCategory.color" [value]="todoItemCategory.id">{{todoItemCategory.name}}</option>
+            </select>
+            <!--<div class="alert-danger" *ngIf="f.submitted && !todoCategory.valid">
+              Category is required. (if added request property)
+            </div>-->
+          </div>
+
+          <div class="form-group">
+            <label for = "expDate">Todo Deadline</label>
+            <input
+              [(ngModel)]="modalTodo.expDate"
+              class="form-control"
+              type="date"
+              id="expDate"
+              name="expDate"
+              #todoExpDate = "ngModel"
+              aria-label="Date Select"
+              (onchange)="onChangeDateValue($event)"
+            />
+            <span id="selectedDate">{{selectedDate}}</span>
+            <div class="alert-danger" *ngIf="f.submitted && !todoExpDate.valid">
+              Invalid date.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for = "description">Todo Description</label>
+            <textarea
+              [(ngModel)]="modalTodo.description"
+              class="form-control"
+              id="description"
+              name="description"
+              #todoDescription = "ngModel"
+              aria-label="Todo Description"
+              rows="3"
+            ></textarea>
+            <div class="alert-danger" *ngIf="f.submitted && !todoDescription.valid">
+              Invalid description.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary" type="submit">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

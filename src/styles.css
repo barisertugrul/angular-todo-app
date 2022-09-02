@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.category-color-badge.bg-light{
+  border: #636464 1px solid;
+  color: #636464;
+}
+
+.category-color-badge.bg-default{
+  border: #000000 1px solid;
+  color: #000000;
+}
