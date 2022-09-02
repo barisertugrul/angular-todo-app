@@ -2,7 +2,7 @@
 
 ## Angular Todo Project that works with your browser's memory using local storage, and its information is not lost when the page is refreshed.
 
-![Todo App Screenshot](https://raw.githubusercontent.com/barisertugrul/angular-todo-app/master/src/assets/Todo-App-Device-Screenshot-1.png)
+![Todo App Screenshot]([https://raw.githubusercontent.com/barisertugrul/angular-todo-app/master/src/assets/Todo-App-Device-Screenshot-1.png](https://github.com/barisertugrul/angular-todo-app/blob/master/src/assets/screenshots/Todo-App-Device-Screenshot-1.png))
 
 * The use of localstorage is exemplified. It * is also ready for API use.
 * Observable-Subscribe techniques are used for data extraction in components.
