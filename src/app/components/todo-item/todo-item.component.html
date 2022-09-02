@@ -20,7 +20,6 @@
   <div class="todo-detail collapse mb-2" [id]="bsElementId">
     <div class="card card-body">
       <p><fa-icon class="text-warning" [icon]="faCat"></fa-icon><span class="text-warning ms-1 me-1">Category:</span>{{(todoCategory) ? todoCategory.name : 'Uncategorized'}}</p>
-      <p><fa-icon class="text-danger" [icon]="faDate"></fa-icon><span class="text-danger ms-1 me-1">Deadline:</span>{{todoItem.expDate | date:'d.M.y'}}</p>
       <p><fa-icon class="text-primary" [icon]="faDesc"></fa-icon><span class="text-primary ms-1 me-1">Description:</span>{{todoItem.description}}</p>
     </div>
   </div>

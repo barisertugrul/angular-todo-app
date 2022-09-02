@@ -2,10 +2,13 @@
 
 ## Angular Todo Project that works with your browser's memory using local storage, and its information is not lost when the page is refreshed.
 
+![Todo App Screenshot](https://raw.githubusercontent.com/barisertugrul/angular-todo-app/master/assets/Todo-App-Device-Screenshot-1.png)
+
 * The use of localstorage is exemplified. It * is also ready for API use.
 * Observable-Subscribe techniques are used for data extraction in components.
 * It is category based. And categories can be assigned bootstrap base colors.
 * Todo information is Todo name, Category, deadline and description.
+* Completed todos can be marked as strikethrough text using the checkbox.
 * Adding, deleting and updating processes have been applied for both categories and todos.
 * Todos can be filtered by category.
 * Filtering by categories was done in the container component. Thus, the child routing process is shown.
