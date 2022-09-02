@@ -1,5 +1,8 @@
 <div class="category-filter list-group">
-    <label class="list-group-item"><h2>Categories</h2></label>
+  <label class="list-group-item" data-bs-toggle="collapse" data-bs-target="#todoCategoryFilter" aria-expanded="true" aria-controls="todoCategoryFilterToggle">
+    <h2>Category Filter</h2>
+  </label>
+  <div class="collapse show" id="todoCategoryFilter">
     <label routerLink="category/all" class="list-group-item" routerLinkActive="active">
       All
       <ng-container *ngIf="getTodoCount()">
@@ -18,4 +21,5 @@
         <span [class]="'badge category-color-badge rounded-pill bg-' + item.color + ' float-end mt-1 me-2'">{{getTodoCount(item.id)}}</span>
       </ng-container>
     </label>
+  </div>
 </div>
