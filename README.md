@@ -1,5 +1,24 @@
 # AngularTodoApp
 
+## Angular Todo Project that works with your browser's memory using local storage, and its information is not lost when the page is refreshed.
+
+* The use of localstorage is exemplified. It * is also ready for API use.
+* Observable-Subscribe techniques are used for data extraction in components.
+* It is category based. And categories can be assigned bootstrap base colors.
+* Todo information is Todo name, Category, deadline and description.
+* Adding, deleting and updating processes have been applied for both categories and todos.
+* Todos can be filtered by category.
+* Filtering by categories was done in the container component. Thus, the child routing process is shown.
+* For the purposes of illustration, adding operations were done directly on the lists, and editing/updating operations were done via the modal form.
+
+# Improvement suggestions:
+* Getting confirmation from the user during the deletion process
+* Sorting todos with drag and drop methods
+* Toast notification system for process results and errors
+* Alert system for upcoming todos
+* User authentication and authorization
+* Multi-user system
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
 ## Development server

@@ -1,5 +1,4 @@
 import { TodoComponent } from './components/todo/todo.component';
-import { TodoContainerModule } from './containers/todo/todo-container/todo-container.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,8 +28,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule,
-    //TodoContainerModule
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
